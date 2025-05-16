@@ -47,10 +47,6 @@ Results showed **high predictive accuracy** and revealed key predictors such as 
 git clone https://github.com/Utkarsh-Jha-MSAIB/New-York-Crime-With-ML.git
 cd New-York-Crime-With-ML
 ```
-Then run the notebooks in this order:
-1. `Shooting Data Processing.ipynb`
-2. `Crime Data Clustering.ipynb`
-3. `Shooting Data Prediction.ipynb`
 
 ## Contact
 
