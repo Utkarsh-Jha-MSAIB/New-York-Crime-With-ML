@@ -1,71 +1,58 @@
 
 # 🔍 NYC Neighborhood Safety Classification Using Machine Learning (2010–2024)
 
-## 📄 Abstract
 This project explores whether machine learning can accurately classify neighborhood safety in New York City using arrest and shooting data from 2010 to 2024. After applying **PCA** and **K-Means clustering** to define safety labels on the arrest data, these safety labels were then transferred into the shooting data at the same granularity. Two supervised models — **Random Forest** and **Artificial Neural Network (ANN)** — were trained to predict one of two labels:
 - **Unsafe and Vulnerable to Shooting**
 - **Safe but Vulnerable to Shooting**
 
 Results showed **high predictive accuracy** and revealed key predictors such as jurisdiction code, time of day, holiday indicators, and proximity to major infrastructure. These findings offer **actionable insights for data-informed policy** aimed at improving public safety in NYC.
 
-## 📌 Introduction
-As crime patterns in NYC evolve, particularly in the post-2019 context, this project investigates whether machine learning can reliably classify neighborhoods as unsafe using historical arrest and shooting data. Understanding **where and why shootings occur** is critical for public safety and resource allocation.
+## Data Sources
+![image](https://github.com/user-attachments/assets/1197759b-0f87-4f02-95a0-7a7f009741b6)
+- NYPD Arrest Data (2010-2024): https://data.cityofnewyork.us/Public-Safety/NYPD-Arrests-Data-Historic-/8h9b-rp9u/about_data
+- NYPD Shooting Data (2010-2024): https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8/about_data
 
-This analysis addresses the limitations of one-size-fits-all policies by using data to uncover **neighborhood-specific vulnerabilities**, offering insights to guide targeted interventions.
+## Project Notebooks
 
-## 📁 Repository Structure
+### 🔹 [Crime Data Clustering](Crime%20Data%20Clustering.ipynb)
 
-```
-<pre> ├── Crime Data Clustering.ipynb # Clustering using PCA + K-Means ├── Shooting Data Processing.ipynb # Feature engineering & preprocessing ├── Shooting Data Prediction.ipynb # Model training & evaluation ├── src/ │ ├── Data_Preprocessing.py # Custom preprocessing functions │ └── ML_Utilities.py # Utility functions for modeling ├── data/ │ ├── raw/ # Original files (Excel, Word) │ │ ├── Arrest Data Link.docx │ │ └── NYPD_Shooting_Incident_Data_Historic.xlsx │ └── processed/ # Cleaned & engineered datasets │ ├── Crime_Data_Clustered.xlsx │ ├── Shooting_Data_Processed.xlsx │ └── Shooting_Data_For_Prediction.xlsx ├── output/ │ ├── ann/ # ANN model results │ │ ├── ann_grid_results.csv │ │ ├── confusion_matrix.png │ │ └── feature_importance.png │ ├── rf/ # Random Forest model results │ │ ├── rf_grid_results.csv │ │ ├── confusion_matrix.png │ │ └── feature_importance.png │ └── insights/ │ └── Key Visualizations.pdf ├── .gitignore └── README.md # Project overview and setup </pre>```
+- Uses PCA and K-Means to cluster NYC precincts based on arrest data
+- Derives initial safety labels ("Safe but Vulnerable", "Unsafe") from arrest features
+- Outputs clustered dataset for integration with shooting records
 
-## ⚙️ Model Summary
+### 🔹 [Shooting Data Processing](Shooting%20Data%20Processing.ipynb)
 
-| Model         | Accuracy | Notes                                      |
-|---------------|----------|--------------------------------------------|
-| ANN (MLPClassifier) | ~85%     | Captures non-linear patterns well       |
-| Random Forest       | **91%**  | Most interpretable; top performer       |
+- Loads and cleans NYPD shooting incident data (2010–2024)
+- Performs extensive feature engineering: Holiday flags, temperature bands, proximity indicators
+- Merges clustering-based labels for supervised learning
 
-## 📊 Evaluation
+### 🔹 [Shooting Data Prediction](Shooting%20Data%20Prediction.ipynb)
 
-### 🔹 Confusion Matrix – ANN
-- 799 true safe, 1291 true unsafe
-- Moderate false positives
+- Trains and evaluates two classifiers: Random Forest and ANN
+- Conducts hyperparameter tuning via GridSearchCV
+- Outputs: Confusion matrices, Feature importances
 
-### 🔹 Confusion Matrix – Random Forest
-- Higher true positive/negative count
-- Fewer false predictions
+> <sub>⚠️ Note: Section links within notebooks may not work directly on GitHub. For full navigation, open notebooks in Jupyter or [nbviewer.org](https://nbviewer.org).</sub>
 
-## 🌟 Feature Importance
+---
 
-Key predictors in both models:
-- `JURISDICTION_CODE`
-- `Times Square Distance`
-- `After_6PM_Flag`
-- Holiday flags (e.g., Thanksgiving, Independence Day)
-- `Murder_Flag`, `Unemployment_Flag`, seasonality
-
-## 🧠 Insights & Impact
-- Spatial and temporal factors significantly influence shooting vulnerability.
-- RF provided more interpretable results, ANN was more balanced.
-- Findings highlight neighborhoods that are **"Safe but Vulnerable"**, a critical insight for preemptive policing and community interventions.
-
-## 🛠️ Tools & Libraries
+## Tools & Libraries
 - Python (Scikit-learn, Pandas, NumPy, Matplotlib)
 - Jupyter Notebook
 - PCA, KMeans, RandomForest, MLPClassifier
 
-## 🚀 How to Run
+## How to Run
 
 ```bash
-git clone https://github.com/yourusername/nyc-crime-safety-ml.git
-cd nyc-crime-safety-ml
+git clone https://github.com/Utkarsh-Jha-MSAIB/New-York-Crime-With-ML.git
+cd New-York-Crime-With-ML
 ```
 Then run the notebooks in this order:
 1. `Shooting Data Processing.ipynb`
 2. `Crime Data Clustering.ipynb`
 3. `Shooting Data Prediction.ipynb`
 
-## 📬 Contact
+## Contact
 
 For questions, collaboration, or feedback, please open an issue or contact via GitHub.
 
