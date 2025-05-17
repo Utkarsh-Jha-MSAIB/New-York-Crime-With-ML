@@ -48,9 +48,3 @@ git clone https://github.com/Utkarsh-Jha-MSAIB/New-York-Crime-With-ML.git
 cd New-York-Crime-With-ML
 ```
 
-## Contact
-
-For questions, collaboration, or feedback, please open an issue or contact via GitHub.
-
----
-**Disclaimer**: Data used in this project is public and anonymized. Interpretations are meant for educational and analytical purposes only.
