@@ -1,7 +1,6 @@
 ipykernel
 jupyter
 matplotlib
-nltk
 numpy
 openpyxl
 os
@@ -11,5 +10,4 @@ scikit-learn
 seaborn
 statsmodels
 tqdm
-vaderSentiment
 xgboost
