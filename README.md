@@ -6,6 +6,7 @@ This project explores whether machine learning can accurately classify neighborh
 - **Safe but Vulnerable to Shooting**
 
   ![image](https://github.com/user-attachments/assets/e4818fdb-8cae-44ce-9d5c-655a2850e850)
+ <p align="right"><sub><i> 📽️ <a href="output/insights/Crime%20Trend%20in%20NYC.mp4">Download complete video (Trend 2010 to 2024)</a> </i></sub></p>
 
 
 Results showed **high predictive accuracy** and revealed key predictors such as jurisdiction code, time of day, holiday indicators, and proximity to major infrastructure. These findings offer **actionable insights for data-informed policy** aimed at improving public safety in NYC.
