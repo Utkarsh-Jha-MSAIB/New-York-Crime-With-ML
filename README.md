@@ -1,7 +1,7 @@
 
 # 🔍 NYC Neighborhood Safety Classification Using Machine Learning (2010–2024)
 
-This project explores whether machine learning can accurately classify neighborhood safety in New York City using arrest and shooting data from 2010 to 2024. After applying **PCA** and **K-Means clustering** to define safety labels on the arrest data, these safety labels were then transferred into the shooting data at the same granularity. Two supervised models — **Random Forest** and **Artificial Neural Network (ANN)** — were trained to predict one of two labels:
+This project explores whether machine learning can accurately classify neighborhood safety in New York City using arrest and shooting data from 2010 to 2024. After applying **PCA** and **K-Means clustering** to define safety labels on the arrest data, these safety labels were then transferred into the shooting data at the same granularity. Two supervised models, **Random Forest** and **Artificial Neural Network (ANN)**, were trained to predict one of two labels:
 - **Unsafe and Vulnerable to Shooting**
 - **Safe but Vulnerable to Shooting**
 
